@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://blo6eatm1c1eg"]
+[gd_scene load_steps=3 format=3 uid="uid://blo6eatm1c1eg"]
 
 [ext_resource type="PackedScene" uid="uid://di0wvab43tn8d" path="res://player/player.tscn" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://cyyc8v4lwmif3" path="res://world/grass_background.png" id="2_fj7yv"]
 
 [node name="World" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 320.0
+offset_bottom = 190.0
+texture = ExtResource("2_fj7yv")
+stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
 position = Vector2(158, 85)
