@@ -1,15 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://blo6eatm1c1eg"]
+[gd_scene load_steps=5 format=3 uid="uid://blo6eatm1c1eg"]
 
 [ext_resource type="PackedScene" uid="uid://di0wvab43tn8d" path="res://player/player.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://cyyc8v4lwmif3" path="res://world/grass_background.png" id="2_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://bikm053snxxbn" path="res://world/bush.tscn" id="3_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://ciw1upsg4ytbl" path="res://world/tree.tscn" id="4_aqk2v"]
 
 [node name="World" type="Node2D"]
+y_sort_enabled = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(320, 192)
+
+[node name="GrassBackground" type="TextureRect" parent="Parallax2D"]
 offset_right = 320.0
-offset_bottom = 190.0
+offset_bottom = 192.0
 texture = ExtResource("2_fj7yv")
 stretch_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
 position = Vector2(158, 85)
+
+[node name="Bush" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(96, 98)
+
+[node name="Bush2" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(184, 126)
+
+[node name="Bush3" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(177, 49)
+
+[node name="Tree" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(130, 138)
+
+[node name="Tree2" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(245, 68)
+
+[node name="Tree3" parent="." instance=ExtResource("4_aqk2v")]
+position = Vector2(66, 50)

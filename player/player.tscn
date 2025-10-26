@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://di0wvab43tn8d"]
+[gd_scene load_steps=53 format=3 uid="uid://di0wvab43tn8d"]
 
 [ext_resource type="Texture2D" uid="uid://4vet7qvmiv3" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dvffnk1jhbqqm" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://b8noq1yhfk71i" path="res://shadows/medium_shadow.png" id="3_g1dw6"]
 
 [sub_resource type="Animation" id="Animation_g1dw6"]
 length = 0.001
@@ -465,6 +466,7 @@ motion_mode = 1
 script = ExtResource("1_rkbax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
 texture = ExtResource("1_oul6g")
 hframes = 60
 
@@ -485,3 +487,13 @@ parameters/StateMachine/RollState/blend_position = Vector2(0, 0)
 [node name="Camera2D" type="Camera2D" parent="."]
 process_callback = 0
 position_smoothing_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -5.5)
+scale = Vector2(1, 0.62499994)
+polygon = PackedVector2Array(0, 16, -8, 0, 0, -8, 8, 0)
+
+[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 4)
+texture = ExtResource("3_g1dw6")
