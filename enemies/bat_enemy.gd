@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -11,4 +11,3 @@ func _physics_process(delta: float) -> void:
 			pass
 		"Chase":
 			pass
-			
