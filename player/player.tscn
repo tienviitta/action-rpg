@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://di0wvab43tn8d"]
+[gd_scene load_steps=54 format=3 uid="uid://di0wvab43tn8d"]
 
 [ext_resource type="Texture2D" uid="uid://4vet7qvmiv3" path="res://player/player.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://dvffnk1jhbqqm" path="res://player/player.gd" id="1_rkbax"]
@@ -461,6 +461,8 @@ nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_2ieo8")
 nodes/StateMachine/position = Vector2(800, 140)
 node_connections = [&"output", 0, &"StateMachine"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g1dw6"]
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_rkbax")
@@ -497,3 +499,9 @@ polygon = PackedVector2Array(0, 16, -8, 0, 0, -8, 8, 0)
 show_behind_parent = true
 position = Vector2(0, 4)
 texture = ExtResource("3_g1dw6")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_g1dw6")
